@@ -1,16 +1,25 @@
 show databases;
 
-create database demo_amad;
+create database demo_project;
 
 drop database demo_amad;
 
-use demo_amad;
+use demo_project;
+
 
 create table customer(
-    cid varchar(10),
+    cid INT NOT NULL AUTO_INCREMENT,
     name varchar(20),
     address varchar(20),
-    salary decimal(10,2)
+    salary decimal(10,2), 
+    PRIMARY KEY (cid)
+);
+create table customer(
+    cid int NOT NULL AUTO_INCREMENT,
+    name varchar(20),
+    address varchar(20),
+    salary decimal(10,2), 
+    constraint primary key(cid),
 );
 
 show tables;
@@ -19,8 +28,8 @@ select * from customer;
 
 desc customer;
 
-insert into customer values("C001","Yasindu","Panadura",25000.00);
-insert into customer values("C002","Pasindu","Galle",15000.00);
+insert into customer values("1","Yasindu","Panadura",25000.00);
+insert into customer values("2","Pasindu","Galle",15000.00);
 
 create table item(
     iid varchar(10),
